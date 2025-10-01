@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\pdf\files\00263378104A60BBE2ADF6E7A99F4307E541AF777460838D7A9A44EE51840137.webp" />
+      <None Include="wwwroot\pdf\files\02C1E7BEC003D46C753E5D66D78191F1DDFC405D4493CF02F897262CCA679D5E.webp" />
+      <None Include="wwwroot\pdf\files\0D4C7C8BD69A3AF7A1A8427624574684889FF8BEF3F953CD26DB154A8B05867E.webp" />
+      <None Include="wwwroot\pdf\files\383C14C25CAF1D6E12DF2C6E3812D02944BD35EBE020002C0F4B73B457A3E1F9.webp" />
+      <None Include="wwwroot\pdf\files\4A05A4FFD6C575F1C12FDFD1F9517FE036C2C18A58BD25D8B3D78A7532B73EFC.webp" />
+      <None Include="wwwroot\pdf\files\4E6EF978DE75FF52B6B60DDDC271DA98D1474E69B5B7A222A547BC893F63C40E.webp" />
+      <None Include="wwwroot\pdf\files\54C6723D243A5E115C79C39391A008AC721FEFE53DC93BD21D3D251F9B8A60CC.webp" />
+      <None Include="wwwroot\pdf\files\56E8370C1CCE10974EBB3BF6610EB60FD411D2A17DCCB40160932AB8CC2181F1.webp" />
+      <None Include="wwwroot\pdf\files\574E303BC5C63DE78F605AF01EF5527A85783817EA620D73A5E94EBAA96B8095.webp" />
+      <None Include="wwwroot\pdf\files\58E331CE693F33B2E83C0920111A9BC0A5C8D857B5BE03672754F12F33859E61.webp" />
+      <None Include="wwwroot\pdf\files\5CD11A82B207F0FF34BEA48A4CF97D5A8FDDC9E6222A4FA908E6654010E324A0.webp" />
+      <None Include="wwwroot\pdf\files\6AF9ABBF4970A6309C89784156A0A4B38CF0A463C4A0DE2B663F007F552B35BA.webp" />
+      <None Include="wwwroot\pdf\files\6F167D94B551BFC3305A52584E7B412F8940FDDB739D38882B987604B942B070.webp" />
+      <None Include="wwwroot\pdf\files\821780BA6598F5419D5F2178E04726AED07B3F008CE9A2DD0B92937B898B0E63.webp" />
+      <None Include="wwwroot\pdf\files\86FEC6F213FD228A0581C20F7A81896E6E39EDC099851348EA1F2A9D5B6992C4.webp" />
+      <None Include="wwwroot\pdf\files\8F4192116B2353234B6F20888AC70B6343151677EDFC11E7C28008C866537836.webp" />
+      <None Include="wwwroot\pdf\files\95D99700DB4AFD9063F4CDFA078C664BEC15E853E4D49D6F0F23595D7542C75D.webp" />
+      <None Include="wwwroot\pdf\files\97815F07C1A2EF535BEB68B6C1C50D5F90A0A4A588229F423F8651E81A6DAB7D.webp" />
+      <None Include="wwwroot\pdf\files\A2D6951C922112E78E5B8B7653F580794C0CBDA762054D1E894891ED82835C97.webp" />
+      <None Include="wwwroot\pdf\files\A969DB7BEF9FBF6453F83CED34FF275EE7DED6A79329DF102990C2816DE81F6E.webp" />
+      <None Include="wwwroot\pdf\files\C2E39A01F2D679AC8795F3ABBD037940F763B3C318EDD748E90D93E1B8291106.webp" />
+      <None Include="wwwroot\pdf\files\client" />
+      <None Include="wwwroot\pdf\files\DBDCB78C6BF328CA53C035E9B9D8D0535AB8422401F35FFD6D8450FE7E423612.webp" />
+      <None Include="wwwroot\pdf\files\F276FC6567F1B6433BED664848FEE2811597E0244FC030D0FD46A77610828CE9.webp" />
+      <None Include="wwwroot\pdf\files\F2AE2BAD79EC0FBE0BA75955DDBD7BE2CC768874BAC7C2EC0C57F84CD01468CC.webp" />
+      <None Include="wwwroot\pdf\files\FAF717DD4984135BEF80CE8100B130647B1EA8BA647CF02D5FE386E33A564A2F.webp" />
+      <None Include="wwwroot\pdf\files\main.js" />
+      <None Include="wwwroot\pdf\files\polyfills.js" />
+      <None Include="wwwroot\pdf\files\Roboto.css" />
+      <None Include="wwwroot\pdf\files\styles.css" />
+      <None Include="wwwroot\pdf\Index.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IronPdf.UpdatedChrome" Version="2025.9.4" />
+      <PackageReference Include="IronPdf.UpdatedChrome.Linux" Version="2025.9.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Assets\" />
+    </ItemGroup>
+
+</Project>
