@@ -4,6 +4,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
@@ -41,12 +42,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="IronPdf.UpdatedChrome" Version="2025.9.4" />
-      <PackageReference Include="IronPdf.UpdatedChrome.Linux" Version="2025.9.4" />
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Assets\" />
+        <PackageReference Include="IronPdf.UpdatedChrome" Version="2025.9.4" />
+        <PackageReference Include="IronPdf.UpdatedChrome.Linux" Version="2025.9.4" />
     </ItemGroup>
 
 </Project>

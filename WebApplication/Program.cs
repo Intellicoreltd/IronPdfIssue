@@ -10,34 +10,35 @@ Logger.CustomLogger = app.Logger;
 Logger.LoggingMode = Logger.LoggingModes.Custom;
 
 Installation.ChromeGpuMode = ChromeGpuModes.Disabled;
-// License.LicenseKey = "";
+Installation.LinuxAndDockerDependenciesAutoConfig = false;
+License.LicenseKey = app.Configuration["LicenseKey"];
 
 app.MapStaticAssets();
 
-app.MapGet("/",async () =>
+await app.StartAsync();
+
+var chromePdfRenderer = new ChromePdfRenderer();
+chromePdfRenderer.RenderingOptions = (ChromePdfRenderOptions)ChromePdfRenderOptions.DefaultChrome.Clone();
+
+chromePdfRenderer.RenderingOptions.CssMediaType = PdfCssMediaType.Print;
+chromePdfRenderer.RenderingOptions.PrintHtmlBackgrounds = true;
+
+chromePdfRenderer.RenderingOptions.PaperSize = PdfPaperSize.A4;
+
+chromePdfRenderer.RenderingOptions.MarginTop = 0;
+chromePdfRenderer.RenderingOptions.MarginBottom = 0;
+chromePdfRenderer.RenderingOptions.MarginLeft = 0;
+chromePdfRenderer.RenderingOptions.MarginRight = 0;
+
+chromePdfRenderer.RenderingOptions.EnableJavaScript = true;
+
+chromePdfRenderer.RenderingOptions.Timeout = 60;
+chromePdfRenderer.RenderingOptions.WaitFor.JavaScript();
+
+var pdf = await chromePdfRenderer.RenderUrlAsPdfAsync("http://localhost:8080/pdf/index.html");
+await using (var fileStream = File.OpenWrite("/data/test.pdf"))
 {
-    var chromePdfRenderer = new ChromePdfRenderer();
-    chromePdfRenderer.RenderingOptions = (ChromePdfRenderOptions)ChromePdfRenderOptions.DefaultChrome.Clone();
+    await pdf.Stream.CopyToAsync(fileStream);
+}
 
-    chromePdfRenderer.RenderingOptions.CssMediaType = PdfCssMediaType.Print;
-    chromePdfRenderer.RenderingOptions.PrintHtmlBackgrounds = true;
-
-    chromePdfRenderer.RenderingOptions.PaperSize = PdfPaperSize.A4;
-
-    chromePdfRenderer.RenderingOptions.MarginTop = 0;
-    chromePdfRenderer.RenderingOptions.MarginBottom = 0;
-    chromePdfRenderer.RenderingOptions.MarginLeft = 0;
-    chromePdfRenderer.RenderingOptions.MarginRight = 0;
-
-    chromePdfRenderer.RenderingOptions.EnableJavaScript = true;
-
-    chromePdfRenderer.RenderingOptions.Timeout = 60;
-    chromePdfRenderer.RenderingOptions.WaitFor.JavaScript();
-
-
-    var pdf = await chromePdfRenderer.RenderUrlAsPdfAsync("http://localhost:5138/pdf/index.html");
-
-    return Results.Stream(pdf.Stream, "application/pdf");
-});
-
-await app.RunAsync();
+await app.StopAsync();
